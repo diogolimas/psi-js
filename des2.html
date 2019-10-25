@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>psi js</title>
+</head>
+<body>
+
+    <div class="container mt-5" >
+            <div class="card" style="width: 30rem;">
+                    <div class="card-body">
+                      <h3 class="card-title">Desafio formas geométricas</h3>
+                      <h6 class="card-subtitle mb-2 text-muted"></h6>
+                      <img src="https://images.vexels.com/media/users/3/153599/isolated/preview/b3213ec43e3ab66eefdf96bba768b6a8-frame-de-retrato-de-corda-de-c--rculo-by-vexels.png" alt="" id="forma" width="300px">
+                      <p class="card-text">Que forma geométrica é essa?</p>
+                      <input type="text" id="resposta" class="form-control" placeholder="Responda aqui">
+                     <button id="responder" class="btn btn-success mt-3">Responder</button>
+                    </div>
+            </div>
+            <img src="" alt="" style="display: none;" id="retorno">
+
+    </div>
+
+    <script>
+         window.onload = function(){
+            document.getElementById('responder').addEventListener('click',conferir);
+
+        };
+
+        function conferir() {
+            var resposta = document.getElementById('resposta').value;
+            
+            if(resposta == 'círculo'){
+                
+                document.getElementById('retorno').src = "https://media0.giphy.com/media/5n216OvKvfoUmwMU66/giphy.gif";
+                document.getElementById('retorno').style.display = "block";
+                document.getElementById('retorno').style.marginTop = "34px";
+                document.getElementById('retorno').className = "rounded";
+            }else{
+                document.getElementById('retorno').src = "https://media1.giphy.com/media/26gs6vEzlpaxuYgso/giphy.gif";
+                document.getElementById('retorno').style.display = "block";
+                document.getElementById('retorno').style.marginTop = "34px";
+                document.getElementById('retorno').className = "rounded";
+            }
+
+        }
+
+    </script>
+</body>
+</html>
