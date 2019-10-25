@@ -9,9 +9,52 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <title>Desafio 3 </title>
+    <title>psi js</title>
 </head>
 <body>
+
+    <div class="container mt-5" >
+            <div class="card" style="width: 30rem;">
+                    <div class="card-body">
+                      <h3 class="card-title">Desafio formas geométricas</h3>
+                      <h6 class="card-subtitle mb-2 text-muted"></h6>
+                      <p class="card-text">Que forma geométrica você quer ver?</p>
+                      <img src="" alt="" id="forma" width="300px" style="display: none;">
+                      
+                      <input type="text" id="resposta" class="form-control" placeholder="Responda aqui">
+                     <button id="responder" class="btn btn-success mt-3">Responder</button>
+                    </div>
+            </div>
+
+            <script>
+            window.onload = function(){
+                document.getElementById('responder').addEventListener('click',trocar);
     
+            };
+            function trocar() {
+                var resposta = document.getElementById('resposta').value;
+                
+                if(resposta == 'círculo'){
+                    
+
+                    document.getElementById('forma').src = "https://images.vexels.com/media/users/3/153599/isolated/preview/b3213ec43e3ab66eefdf96bba768b6a8-frame-de-retrato-de-corda-de-c--rculo-by-vexels.png";
+                    document.getElementById('forma').style.display = "block";
+                    document.getElementById('forma').className = "rounded";
+                }else if(resposta == 'quadrado'){
+
+                }else if (resposta == 'triângulo'){
+
+                }else if(resposta == 'retângulo'){
+
+                }else{
+
+                }
+                
+            }
+            
+            </script>
+            
+
+    </div>
 </body>
 </html>
