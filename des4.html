@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+            table, td, th{
+            border-collapse: collapse;
+            border: 1px solid black;
+            }
+            .par{
+            background-color: rgb(0, 255, 42);
+            }
+            .impar{
+            background-color: rgb(226, 27, 27);
+            }
+            </style>
+    <title>Arrays</title>
+</head>
+<body>
+    <div class="container">
+         <h3>Chapéu  seletor</h3>   
+         <label for="estudante">Novo estudante</label>
+         <input type="text" name="" id="estudante">
+         <button type="submit" id="pegar">Grifinória</button>
+         <h3>Novos alunos na Grifinória</h3>
+
+         <button type="button" onclick="verLista()">Atualizar lista de alunos</button><br/>
+         <div id="listadealunos"></div>
+
+        <input type="text" id="busca"/>
+        <button type="button"
+        onclick="buscarAluno()">Grifinória</button><br/>
+    </div>
+
+
+    <script>
+         window.onload = function(){
+            document.getElementById('pegar').addEventListener('click',selecionar);
+
+        };
+        var grifinoria = [];
+        function selecionar() {
+            var novoestudante = document.getElementById('estudante').value;
+            grifinoria.push(novoestudante);
+            alert(novoestudante + "selecionando para Grifinória!");
+            document.getElementById('estudante').value="";
+         
+        }
+        function verLista(){
+            var lista = "<table class='tabela'>";
+            lista += "<tr>";
+            lista += " <th>Aluno</th>";
+            lista += " <th>Casa</th>";
+            lista += "</tr>";
+            for (i=0; i<grifinoria.length; i++){
+            if (i%2==0) {lista += "<tr class='par'><td>";}
+            else {lista += "<tr class='impar'><td>";}
+            lista += grifinoria[i];
+            lista += "</td><td>Grifinória</td><tr>";
+                    lista += "</table>";
+        }
+           
+            document.getElementById("listadealunos").innerHTML = lista;
+            function buscarAluno(){
+                var nome = document.getElementById("busca").value;
+                var achou = false;
+                for (i=0; i<grifinoria.length; i++){
+                if (grifinoria[i] == nome){ achou = true; break; }
+                }
+                if (achou){ alert(nome + " está na Grifinória!"); }
+                else{ alert(nome + " não está na Grifinória!"); }
+            }
+        }
+    </script>
+</body>
+</html>
