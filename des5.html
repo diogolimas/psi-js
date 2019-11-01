@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>aula 5 - 01/11</title>
+    
+    <script src="jsfirst.js"></script>
+    <style>
+        body{
+            background-color: blue;
+            color: aliceblue;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+    
+<body>
+    <h1 id="id_h1" class="classe_h1">Mundo Mágico do Javascript</h1>
+    <p id="corvinal" class="classe_p">Nicole falsa</p>
+    <p id="grifinoria" class="classe_p">Vitória</p>
+    <p id="sonserina" class="classe_p">Klinsmann viadinhho</p>
+    <p id="lufalufa" class="classe_p">Diogo cabeça de batata doce</p>
+    <button type="button" id="bdefinir" onclick="definirCores()">Recuperar </button>
+
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0];
+        var p2 = window.document.getElementsByTagName('p')[1];
+        corpo.style.background = "purple";
+        p1.style.color = "yellow";
+        p2.style.color = "yellow";
+        p1.style.fontSize = "100px";
+        p2.style.fontSize = "12px";
+        document.write(p1.innerHTML);
+    </script>
+</body>
+</html>  
