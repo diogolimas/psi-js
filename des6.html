@@ -14,7 +14,7 @@
     <div id="mensagem"> 
 
     </div>
-    <form action="" method="get" onsubmit="verificarSenha()">
+    <form action="" method="get" >
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" name="" id="nome" class="form-control">
@@ -25,14 +25,14 @@
             </div>
             <div class="form-group">
                 <label for="senha">Senha:</label>
-                <input type="text" name="" id="senha" class="form-control">
+                <input type="text" name="" id="senha" class="form-control" onchange="validar()">
             </div>
             <div class="form-group">
                     <label for="confirmarsenha">Confirme o valor da senha:</label>
-                    <input type="text" name="" id="confirmarsenha" class="form-control">
+                    <input type="text" name="" id="confirmarsenha" class="form-control" onchange="validar()">
                 </div>
             <div >
-                <button type="submit" class="">Enviar dados</button>
+                <button type="submit" class="btn btn-success">Enviar dados</button>
             </div>
     
     </form>
